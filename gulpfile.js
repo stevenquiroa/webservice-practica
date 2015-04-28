@@ -2,7 +2,6 @@ const gulp = require('gulp')
 const browserify = require('gulp-browserify')
 const sass = require('gulp-ruby-sass')
 
-const client = 'client/*.js'
 const src = 'client/app.js'
 const dest = 'public/'
 
@@ -20,6 +19,6 @@ gulp.task('sass', function(){
 	.pipe(gulp.dest(dest))
 })
 gulp.task('watch', function() {
-  gulp.watch(client, ['sass'])
-  gulp.watch(client, ['script'])
+  gulp.watch('client/*.scss', ['sass',])
+  gulp.watch('client/*.js', ['script'])
 })
