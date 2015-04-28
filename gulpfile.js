@@ -1,5 +1,6 @@
 const gulp = require('gulp')
 const browserify = require('gulp-browserify')
+const sass = require('gulp-ruby-sass')
 
 const client = 'client/*.js'
 const src = 'client/app.js'
@@ -11,6 +12,14 @@ gulp.task('script', function(){
 		.pipe(gulp.dest(dest))
 })
 
+gulp.task('sass', function(){
+	return sass('client/') 
+    .on('error', function (err) {
+      console.error('Error!', err.message);
+   	})
+	.pipe(gulp.dest(dest))
+})
 gulp.task('watch', function() {
-  gulp.watch(client, ['script']);
+  gulp.watch(client, ['sass'])
+  gulp.watch(client, ['script'])
 })
