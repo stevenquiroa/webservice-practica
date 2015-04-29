@@ -3,16 +3,17 @@
 <head>
 	<meta charset="utf-8">
 	<title>Game</title>
+	<link rel="stylesheet" href="sass.css">
+	<script type="text/javascript" src="http://localhost:48626/takana.js"></script>
+    <script type="text/javascript">
+      takanaClient.run({host: 'localhost:48626'});
+    </script>
 </head>
 <body>
-	<button id="left">
-		Left
-	</button>
-	<button id="right">
-		Right
-	</button>
-	<p><b>Right:</b> <span id="rright">50</span></p>
-	<p><b>Left:</b> <span id="rleft">50</span></p>
+	<div class="cont">
+		<div id="left" class="left button">50</div>
+		<div id="right" class="right button">50</div>		
+	</div>
 
 	<script src="app.js"></script>
 </body>

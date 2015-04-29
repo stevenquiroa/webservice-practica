@@ -1,5 +1,25 @@
-$font-stack: Helvetica, sans-serif
-
-.info{
-	width: 100px;
+body, div{
+	padding: 0;
+	border: 0;
+	margin: 0;
+}
+.cont{
+	position: relative;
+	display: block;
+	height: 300px;
+	width: 100%;
+}
+.left, .right{
+	display: inline-block;
+	vertical-align: top;
+	width: 50%;
+	height: 100%;
+	margin: 0 auto;
+	transition: width 100ms;
+}
+.left{
+	background-color: #4d9;
+}
+.right{
+	background-color: #9d4;
 }

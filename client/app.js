@@ -5,13 +5,11 @@ const uuid = require('uuid')
 const socket = io()
 const id = uuid.v4()
 
-const buttons = document.querySelectorAll('button')
+const buttons = document.querySelectorAll('.button')
 const left = document.querySelector('#left')
 const right = document.querySelector('#right')
 
 var l = 0, r = 0
-var rleft = document.querySelector('#rleft')
-var rright = document.querySelector('#rright')
 
 for (var i = buttons.length - 1; i >= 0; i--) {
 	buttons[i].addEventListener('click', action)
@@ -31,6 +29,8 @@ function send_points(p) {
 	socket.emit('click', {left : p})
 }
 function set_ponits (message) {
-	rleft.innerHTML = message.left
-	rright.innerHTML = message.right
+	left.innerHTML = message.left
+	right.innerHTML = message.right
+	left.style.width = message.left + '%'
+	right.style.width = message.right + '%'
 }
