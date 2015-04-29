@@ -10,9 +10,11 @@ body, div{
 	width: 100%;
 }
 .left, .right{
+	position: relative;
 	display: inline-block;
+	float: left;
 	vertical-align: top;
-	width: 50%;
+	width: 	50%;
 	height: 100%;
 	margin: 0 auto;
 	transition: width 100ms;
